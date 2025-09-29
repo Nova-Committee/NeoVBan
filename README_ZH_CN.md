@@ -5,26 +5,26 @@ NVBan 是一个 Minecraft 模组，通过将玩家账号与硬件标识符绑定
 
 ## 指令说明
 
-### `/nvban unbind <player>`
+### `/naban unbind <player>`
 - **权限等级**: 3
 - **功能**: 解除指定玩家账号与硬件ID的绑定关系，允许该玩家从其他设备登录
-- **用法**: `/nvban unbind Steve` - 解除玩家"Steve"的设备绑定
+- **用法**: `/naban unbind Steve` - 解除玩家"Steve"的设备绑定
 
-### `/nvban list`
+### `/naban list`
 - **权限等级**: 3
 - **功能**: 列出当前所有玩家与硬件ID的绑定关系
-- **用法**: `/nvban list` - 显示所有已绑定的玩家-硬件关系
+- **用法**: `/naban list` - 显示所有已绑定的玩家-硬件关系
 
-### `/nvban info <player>`
+### `/naban info <player>`
 - **权限等级**: 3
 - **功能**: 显示指定玩家绑定的硬件ID信息
-- **用法**: `/nvban info Steve` - 显示玩家"Steve"绑定的硬件ID
+- **用法**: `/naban info Steve` - 显示玩家"Steve"绑定的硬件ID
 
-### `/nvban ban <hardwareId>`
+### `/naban ban <hardwareId>`
 - **权限等级**: 3
 - **功能**: 封禁指定的硬件ID，阻止任何绑定到该硬件ID的账号登录
-- **用法**: `/nvban ban AABBCCDDEEFF` - 封禁指定的硬件ID
-- **注意**: 可以通过 `/nvban list` 或 `/nvban info <player>` 获取硬件ID
+- **用法**: `/naban ban AABBCCDDEEFF` - 封禁指定的硬件ID
+- **注意**: 可以通过 `/naban list` 或 `/naban info <player>` 获取硬件ID
 
 ## 工作原理
 1. 玩家首次登录时，其账号会自动与设备的硬件ID建立绑定关系

@@ -1,10 +1,9 @@
-package committee.nova.nvban;
+package committee.nova.naban;
 
 import com.mojang.brigadier.arguments.StringArgumentType;
 import net.minecraft.commands.arguments.EntityArgument;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
@@ -24,21 +23,21 @@ import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.util.Enumeration;
 
-@Mod(NVBanMod.MOD_ID)
-public class NVBanMod {
+@Mod(NABanMod.MOD_ID)
+public class NABanMod {
 
-    public static final String MOD_ID = "nvban";
-    private static NVBanMod instance;
+    public static final String MOD_ID = "naban";
+    private static NABanMod instance;
     private MinecraftServer server;
     private final Map<UUID, String> playerHardwareMap = new HashMap<>();
     private final Map<String, UUID> hardwarePlayerMap = new HashMap<>();
 
-    public NVBanMod() {
+    public NABanMod() {
         instance = this;
         NeoForge.EVENT_BUS.register(this);
     }
 
-    public static NVBanMod getInstance() {
+    public static NABanMod getInstance() {
         return instance;
     }
 
@@ -77,7 +76,7 @@ public class NVBanMod {
 
     private void registerCommands(CommandDispatcher<CommandSourceStack> dispatcher) {
         dispatcher.register(
-                Commands.literal("nvban")
+                Commands.literal("naban")
                         .requires(source -> source.hasPermission(3))
                         .then(Commands.literal("unbind")
                                 .then(Commands.argument("player", EntityArgument.player())
