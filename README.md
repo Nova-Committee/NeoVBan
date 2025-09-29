@@ -1,7 +1,7 @@
-# NVBan Mod README
+# NABan Mod README
 
 ## Overview
-NVBan is a Minecraft mod that prevents players from switching accounts to bypass bans by binding player accounts to hardware identifiers.
+NABan is a Minecraft mod that prevents players from switching accounts to bypass bans by binding player accounts to hardware identifiers.
 
 ## Commands
 
