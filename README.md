@@ -1,25 +1,36 @@
+# NVBan Mod README
 
-Installation information
-=======
+## Overview
+NVBan is a Minecraft mod that prevents players from switching accounts to bypass bans by binding player accounts to hardware identifiers.
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+## Commands
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
+### `/nvban unbind <player>`
+- **Permission Level**: 3
+- **Function**: Unbinds a player's account from their hardware ID, allowing them to log in from a different device
+- **Usage**: `/nvban unbind Steve` - Removes the device binding for player "Steve"
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
+### `/nvban list`
+- **Permission Level**: 3
+- **Function**: Lists all current player-to-hardware ID bindings
+- **Usage**: `/nvban list` - Shows all bound player-hardware relationships
 
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
+### `/nvban info <player>`
+- **Permission Level**: 3
+- **Function**: Displays the hardware ID that is bound to a specific player
+- **Usage**: `/nvban info Steve` - Shows the hardware ID bound to player "Steve"
 
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+### `/nvban ban <hardwareId>`
+- **Permission Level**: 3
+- **Function**: Bans a specific hardware ID, preventing any account bound to it from logging in
+- **Usage**: `/nvban ban AABBCCDDEEFF` - Bans the specified hardware ID
+- **Note**: You can get hardware IDs using `/nvban list` or `/nvban info <player>`
+
+## How It Works
+1. When a player logs in for the first time, their account is bound to their device's hardware ID
+2. If they try to log in from a different device, they will be disconnected
+3. If another account tries to log in from a device that's already bound to a different player, they will be disconnected
+4. Admins can manage bindings and ban specific hardware IDs using the provided commands
+
+## Permission Requirements
+All commands require permission level 3 (administrator level) to execute.
